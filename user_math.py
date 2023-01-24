@@ -1,9 +1,9 @@
 """
-Always start with a docstring that describes what the module does.
-Include your name and the date.
+Name: Levi Lowther
+Date: 01/23/23
 
 Use built-in functions and 
-functions from the math module.
+functions from the math module to apply to the Art domain.
 
 To illustrate the ability to call functions and 
 display useful results to the user. 
@@ -27,7 +27,7 @@ def get_area_of_lot(length, width):
     # Use a try / except / finally block when something 
     # could go wrong
     try: 
-        area = 0 # fix this
+        area = length * width
         return area
     except Exception as ex:
         print(f"Error: {ex}")
@@ -35,6 +35,36 @@ def get_area_of_lot(length, width):
 
 
 # define more functions here (see instuctions)
+def donation_round_up(price):
+    """ Round up price for donation to art museum"""
+    try:
+        price = math.ceil(price)
+        return price
+    except Exception as ex:
+        print(f"Error: {ex}")
+        return None    
+
+def art_class_cost(hours):
+    """ Cost of an instructor lead class based on hours in class"""
+    supplies = 30
+    hourly_rate = 50
+    try:
+        cost = supplies + hourly_rate * hours  
+        return cost
+    except Exception as ex:
+        print(f"Error: {ex}")
+        return None    
+
+def sum_of_fundraiser(donation_list):
+    """ sum of donations during fundraiser """
+    donation_list = [2500,100,750,50,1000]
+    try:
+        donation_list = math.fsum(donation_list)  
+        return donation_list
+    except Exception as ex:
+        print(f"Error: {ex}")
+        return None    
+
 
 
 
@@ -49,4 +79,22 @@ def get_area_of_lot(length, width):
 if __name__ == "__main__":
 
     # call your functions here (see instructions)
-    print("your code here")
+    print("Explore some functions in the math module")
+    print()
+    print(f"math.comb(5,1) = {math.comb(5,1)}")
+    print(f"math.perm(5,1) = {math.perm(5,1)}")
+    print()
+    print(f"math.comb(5,3) = {math.comb(5,3)}")
+    print(f"math.perm(5,3) = {math.perm(5,3)}")
+    print()
+    print("Call get_area_of_lot with different arguments")
+    print()
+    print(f"get_area_of_lot(6,2) = {get_area_of_lot(6,2)}")
+    print(f"get_area_of_lot(10,-2) = {get_area_of_lot(10,-2)}")
+    print(f"get_area_of_lot(6,2) = {get_area_of_lot('six','two')}")
+    print()
+    print(f"donation_round_up(25.30) = {donation_round_up(25.30)}")
+    print()
+    print(f"art_class_cost(3) = {art_class_cost(3)}")
+    print()
+    print(f"sum_of_fundraiser(2) = {sum_of_fundraiser(2)}")
