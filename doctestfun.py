@@ -59,6 +59,14 @@ def add_any(*args):
         sum += x  # Use the popular and concise version of sum = sum + x
     return sum
 
+def prod_any(*args):
+    """Return the product of numbers, using bulit-in *args."""
+    prod = 1
+    for x in args:
+        prod *= x
+    return prod
+  
+#if you assign the prod 0 to begin with when multiplying you will always end up with 0 as your answer
 
 def add_any_with_keywords(**kwargs):
     """Return the sum of numbers, using built-in keyword args, **kwargs."""
@@ -82,6 +90,8 @@ if __name__ == "__main__":
     print(f"add_any(2,2)     = {add_any(2,2)}")
     print(f"add_any(2,2,2)   = {add_any(2,2,2)}")
     print(f"add_any(2,2,2,2) = {add_any(2,2,2,2)}")
+    print()
+    print(f'prod_any(2,5)    = {prod_any(2,5)}')
     print()
     print(f"add_any_with_keywords(a=8,b=2) = {add_any_with_keywords(a=8,b=2)}")
     print()
