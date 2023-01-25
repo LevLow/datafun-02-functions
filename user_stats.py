@@ -16,7 +16,7 @@ Uses only Python Standard Library module:
 
 """
 
-import statistics
+import statistics as stats
 
 # define a variable with some univariant data 
 # (one varabile, many readings)
@@ -73,8 +73,62 @@ scores = [
     104,
 ]
 
+
+#averages and measures of central tendency 
+mean = stats.mean(scores)
+median = stats.median(scores)
+mode = stats.mode(scores)
+
+#measures of spread
+var = stats.variance(scores)
+stdev = stats.stdev(scores)
+
+print()
+print("=============================================================")
+print()
+print(f"Here are the final grades for Drawing 101: {scores}")
+print()
+print("Descriptive statistics include measures of central tendancy:")
+print(f"   mean={mean:.2f}")
+print(f"   median={median:.2f}")
+print(f"   mode={mode:.2f}")
+print()
+print("Descriptive statistics include measures of spread:")
+print(f"   var={var:.2f}")
+print(f"   stddev={stdev:.2f}")
+print()
+
+
+
 # univariant time series data (one varabile over time)
 # typically, x (or time) is independent and
 # y is dependent on x (e.g. temperature vs hour of day)
 x_times = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-y_temps = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31,32]
+y_arts = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31,32]
+
+slope, intercept = stats.linear_regression(x_times, y_arts)
+
+future_x = 13
+
+future_y = round(slope * future_x + intercept)
+
+print()
+print("=============================================================")
+print()
+print("Here's a correlation between years of experience and art forms mastered:")
+print()
+print(f"x (years experience):{x_times}")
+print()
+print(f"y (art media mastered):{y_arts}")
+print()
+print("Calculate the slope and intercept of a best fit straight line:")
+print()
+print(f"   slope = {slope}")
+print(f"   intercept = { intercept}")
+print()
+print("Let's use our best fit line to PREDICT a future value.")
+print()
+print(f"   At future x = {future_x},")
+print(f"   we predict the value of y will be { future_y}.")
+print("It takes time, but the more you pracitce the better you will get!")
+print()
